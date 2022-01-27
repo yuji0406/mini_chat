@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chat_message: MyString
+  is_my_message: false
+
+two:
+  chat_message: MyString
+  is_my_message: false
