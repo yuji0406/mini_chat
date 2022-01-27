@@ -6,7 +6,7 @@ class User < ApplicationRecord
                   format: { with: VALID_EMAIL_REGEX },
                   uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, presence: true, length: { minimum: 7 }
+  validates :password, presence: true, length: { minimum: 6 }
   validates :name, presence: true
   validates :campany_name, presence: true
   validates :introduction, length: { maximum: 200 }
@@ -14,4 +14,10 @@ class User < ApplicationRecord
   has_many :user_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :chats, dependent: :destroy
+  
+  def self.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 end
