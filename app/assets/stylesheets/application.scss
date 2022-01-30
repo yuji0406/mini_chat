@@ -21,7 +21,29 @@
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
-
+h1{
+  padding-top: 30px;
+  text-align: center;
+}
+.container{
+  background-color: lightyellow;
+}
+.navbar-right{
+  list-style: none;
+  a{
+    color: gray;
+  }
+}
+.message-box{
+  background-color: whitesmoke;
+}
+#logo{
+  font-family: fantasy;
+  font-weight: 900;
+  font-size: 33px;
+  color: gray;
+  margin: 10px;
+}
  aside {
   section.user_info {
     margin-top: 20px;
@@ -40,7 +62,7 @@
     }
     h1 {
       font-size: 1.4em;
-      text-align: left;
+      text-align: center;
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
@@ -67,12 +89,6 @@ input {
   }
 }
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-}
 
 checkbox {
   margin-top: -10px;
