@@ -1,10 +1,20 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%#= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+<div>
+  <section class="user_info">
+    <h1 class="text-center">
+      <%= @user.name %>さんのマイページ
+    </h1>
+    <%= link_to "投稿する", new_message_path, class: "btn btn-primary" %>
+    <% if @user == current_user %>
+      <%= link_to "編集する", edit_user_path, class: "btn btn-warning" %>
+    <% else %>
+      <% link_to "チャットする", room_path, class: "btn btn-warning" %>
+    <% end %>
+  </section>
+</div>
+<div>
+  <% @messages.each do |message| %>
+  <div class="message-box">
+    <p class="text-center"><%= message.message %></p>
+  </div>
+  <% end %>
 </div>

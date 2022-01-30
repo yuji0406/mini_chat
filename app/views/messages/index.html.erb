@@ -1,2 +1,9 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<h1 class="text-center">投稿一覧</h1>
+<% @messages.each do |message| %>
+<div class="message-box">
+  <p class="p-3"><%= message.user.name %></p>
+  <p class="text-center">
+    <%= message.message %>
+  </p>
+</div>
+<% end %>

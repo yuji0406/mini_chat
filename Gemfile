@@ -5,9 +5,12 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap', '~>4.5'
+gem 'bootstrap-sass'
 gem 'bcrypt', '3.1.12'
 gem 'jquery-rails'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

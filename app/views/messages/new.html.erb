@@ -1,2 +1,14 @@
-<h1>Messages#new</h1>
-<p>Find me in app/views/messages/new.html.erb</p>
+<div class="messages-form col-md-8 mx-auto">
+  <h1 class="text-center">何か投稿しましょう！</h1>
+  <%#= render 'shared/error_messages', @user: @message %>
+  <%= form_with model: @message, local: true do |f| %>
+    <div class="form-group">
+      <div>
+        <%= f.label :message, "200文字以内です" %>
+        <%= f.text_area :message, class: "form-control" %>
+        
+        <%= f.submit "投稿する", class: "btn btn-prymary" %>
+        <% end %>
+    </div>
+  </div>
+</div>
